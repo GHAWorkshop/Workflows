@@ -1,0 +1,23 @@
+name: More Usecases
+on: [push, workflow_dispatch]
+jobs:
+  run-linux-commands:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: multiline script 
+        run: |
+           node -v 
+           npm -v
+      - name: python Command 
+        run: |
+          import platform 
+          print(platform.processor())
+        shell: python
+  run-windwos-commands:
+    runs-on: windows-latest
+    steps:
+      - name: Directory PowerShell
+        run: Get-Location 
+      - name: Directory Bash 
+        run: pwd 
+        shell: bash 

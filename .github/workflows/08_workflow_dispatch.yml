@@ -1,0 +1,13 @@
+name: Input to workflow_dispatch
+on: 
+  workflow_dispatch:
+      inputs:
+        username:
+          description: 'Who do you want to greet?'
+          required: true
+jobs: 
+  greet-someone: 
+    uses: ./.github/workflows/greeting.yml
+    with:
+      username: ${{ github.event.inputs.username }}
+

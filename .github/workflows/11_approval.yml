@@ -1,0 +1,27 @@
+name: Approval
+on: [push, workflow_dispatch]
+
+jobs:
+  ops_approval:
+    environment: ops_approve
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Approval from Operations has been given!"
+      
+  dev_approval:
+    environment: dev_approve
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Approval from Developers has been given"
+  command_01:
+    needs: 
+      - dev_approval
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "I received an approaval to run!"
+  command_02:
+    needs: 
+      - dev_approval
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "I received an approaval to run, too!"

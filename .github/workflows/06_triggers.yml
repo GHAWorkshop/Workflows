@@ -1,0 +1,30 @@
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+name: Events that trigger workflows
+on:
+  push:
+    branches:
+      - master
+      - "feature/**" # matches featur/A, feature/B, doesn't match feature/A/A
+      - "!feature/C" # excludes fetaure/C
+    tags: 
+      - v1.*
+    # based on what file paths are changed
+    # you may only define one of `paths` and `paths-ignore` for a single event
+    paths: 
+      - "**.yml"
+      - "!.yaml"
+    # paths-ignore:
+    # - 'docs/**'
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "0/5 * * * *"
+  pull_request:
+    types: [closed, assigned, opened, reopened]
+
+jobs: 
+  be-impulsive: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Be triggered
+        run: |
+          echo "I have been triggered! This PC will destroy itself in 10..9..8..7..6..5..4..3..2..1 *bam*"

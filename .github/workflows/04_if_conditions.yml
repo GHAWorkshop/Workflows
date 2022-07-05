@@ -1,0 +1,15 @@
+name: If Conditions 
+on: [push, workflow_dispatch]
+env:
+  DAY_OF_WEEK: Monday
+jobs:
+  using-an-if-condition:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: echo a string
+        # you may omit the expression syntax (${{ }}) because GitHub automatically evaluates the if conditional as an expression
+        if: ${{ env.DAY_OF_WEEK != 'Saturday' || env.DAY_OF_WEEK != 'Sunday' }}
+        run: echo "$Greeting World, it is a rainy $DAY_OF_WEEK"
+      - name: echo a string
+        if: ${{ env.DAY_OF_WEEK == 'Saturday' || env.DAY_OF_WEEK == 'Sunday' }}
+        run: echo "$Greeting World, it is a sunny $DAY_OF_WEEK!! *\^^/*"

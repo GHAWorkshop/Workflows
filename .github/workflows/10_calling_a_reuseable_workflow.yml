@@ -1,0 +1,11 @@
+name: Calling a RW
+on: [push, workflow_dispatch]
+jobs: 
+  greet-alice: 
+    uses: ./.github/workflows/greeting.yml
+    with:
+      username: Alice
+  greet-john: 
+    uses: ./.github/workflows/greeting.yml
+    with:
+      username: John
