@@ -8,7 +8,7 @@ jobs:
     steps: 
       - name: echo a string
         # you may omit the expression syntax (${{ }}) because GitHub automatically evaluates the if conditional as an expression
-        if: ${{ env.DAY_OF_WEEK != 'Saturday' || env.DAY_OF_WEEK != 'Sunday' }}
+        if: ${{ env.DAY_OF_WEEK != 'Saturday' &&  env.DAY_OF_WEEK != 'Sunday' }}
         run: echo "$Greeting World, it is a rainy $DAY_OF_WEEK"
       - name: echo a string
         if: ${{ env.DAY_OF_WEEK == 'Saturday' || env.DAY_OF_WEEK == 'Sunday' }}
