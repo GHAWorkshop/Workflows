@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-      - "feature/**" # matches featur/A, feature/B, doesn't match feature/A/A
+      - "feature/**" # matches feature/A, feature/B, doesn't match feature/A/A
       - "!feature/C" # excludes fetaure/C
     tags: 
       - v1.*
