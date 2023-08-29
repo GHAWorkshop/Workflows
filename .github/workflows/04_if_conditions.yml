@@ -1,7 +1,7 @@
 name: If Conditions 
-on: [push, workflow_dispatch]
+on: [workflow_dispatch]
 env:
-  DAY_OF_WEEK: Monday
+  DAY_OF_WEEK: Saturday
 jobs:
   using-an-if-condition:
     runs-on: ubuntu-latest

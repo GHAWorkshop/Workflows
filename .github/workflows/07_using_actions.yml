@@ -1,5 +1,5 @@
 name: Using Actions 
-on: [push, workflow_dispatch]
+on: [workflow_dispatch]
 jobs: 
   using-actions: 
     runs-on: ubuntu-latest

@@ -1,5 +1,5 @@
 name: More Usecases
-on: [push, workflow_dispatch]
+on: [workflow_dispatch]
 jobs:
   run-linux-commands:
     runs-on: ubuntu-latest

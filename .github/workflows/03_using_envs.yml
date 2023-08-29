@@ -1,6 +1,6 @@
 # https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables
 name: Using Envs
-on: [push, workflow_dispatch]
+on: [workflow_dispatch]
 env: 
   WF_ENV: Available to all jobs 
 jobs:
